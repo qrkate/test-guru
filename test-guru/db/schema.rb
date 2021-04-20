@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_20_221527) do
+ActiveRecord::Schema.define(version: 2021_04_20_224452) do
 
   create_table "answers", force: :cascade do |t|
-    t.string "body"
+    t.string "body", null: false
     t.integer "question_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 2021_04_20_221527) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "body"
+    t.string "body", null: false
     t.integer "test_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_04_20_221527) do
   end
 
   create_table "tests", force: :cascade do |t|
-    t.string "title"
+    t.string "title", null: false
     t.integer "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 2021_04_20_221527) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "login"
-    t.string "password"
+    t.string "name", null: false
+    t.string "login", null: false
+    t.string "password", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
