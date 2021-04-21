@@ -4,8 +4,10 @@ one:
   name: MyString
   login: MyString
   password: MyString
+  'null': 
 
 two:
   name: MyString
   login: MyString
   password: MyString
+  'null': 
