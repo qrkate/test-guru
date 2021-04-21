@@ -1,26 +1,18 @@
-development:
+default: &default
   adapter: postgresql
-  encoding: utf8
-  database: test-guru_development
+  encoding: unicode
   pool: 5
   username:
   password:
 
-test: &TEST
-  adapter: postgresql
-  encoding: utf8
+development:
+  <<: *default
+  database: test-guru_development
+
+test:
+  <<: *default
   database: guru_test
-  pool: 5
-  username:
-  password:
 
 production:
-  adapter: postgresql
-  encoding: utf8
+  <<: *default
   database: test-guru_production
-  pool: 5
-  username:
-  password:
-
-cucumber:
-  <<: *TEST
