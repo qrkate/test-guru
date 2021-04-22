@@ -37,3 +37,13 @@ Answer.seed_create(
   { body: 'Visibility или opacity.', question_id: questions[6].id },
   { body: 'Универсальный селектор (*).', question_id: questions[7].id }
   )
+
+PassedTest.seed_create(
+   { user_id: users[0].id, test_id: tests[0].id },
+   { user_id: users[0].id, test_id: tests[1].id },
+   { user_id: users[0].id, test_id: tests[2].id },
+   { user_id: users[0].id, test_id: tests[3].id },
+   { user_id: users[1].id, test_id: tests[2].id },
+   { user_id: users[1].id, test_id: tests[1].id },
+   { user_id: users[2].id, test_id: tests[3].id }
+    )  
