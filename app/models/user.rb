@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: "Test", foreign_key: "author_id", dependent: :destroy
 
   def test_level(level)
-    Test.joins('JOIN passed_tests ON passed_tests.test_id = tests.id').where(passed_tests: {user_id: id}, level: level)
+    tests.where(level: level)
   end
 end
