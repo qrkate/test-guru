@@ -11,41 +11,41 @@ unless Test.exists?
     ])
 
   tests = Test.create!([
-    { title: 'Ruby', category_id: categories[1].id, author_id: users[0].id },
-    { title: 'HTML', category_id: categories[0].id, author_id: users[1].id },
-    { title: 'SQL', level: 2, category_id: categories[1].id, author_id: users[0].id },
-    { title: 'CSS', level: 1, category_id: categories[0].id, author_id: users[2].id }
+    { title: 'Ruby', category: categories[1], author: users[0] },
+    { title: 'HTML', category: categories[0], author: users[1] },
+    { title: 'SQL', level: 2, category: categories[1], author: users[0] },
+    { title: 'CSS', level: 1, category: categories[0], author: users[2] }
     ])
 
   questions = Question.create!([
-    { body: 'Что такое class?', test_id: tests[0].id },
-    { body: 'Назовите модификаторы доступа в Ruby.', test_id: tests[0].id },
-    { body: 'Как писать комментарии в HTML-коде?', test_id: tests[1].id },
-    { body: 'Что такое Image Map?', test_id: tests[1].id },
-    { body: 'Важен ли в составном индексе порядок столбцов?', test_id: tests[2].id },
-    { body: 'В чем разница между однорядными и многорядными функциями?', test_id: tests[2].id },
-    { body: 'Какое свойство позволяет вам спрятать элемент, но сохранить занимаемое им пространство на странице?', test_id: tests[3].id },
-    { body: 'Какой селектор позволяет вам обратиться к каждому элементу веб-страницы?', test_id: tests[3].id }
+    { body: 'Что такое class?', test: tests[0] },
+    { body: 'Назовите модификаторы доступа в Ruby.', test: tests[0] },
+    { body: 'Как писать комментарии в HTML-коде?', test: tests[1] },
+    { body: 'Что такое Image Map?', test: tests[1] },
+    { body: 'Важен ли в составном индексе порядок столбцов?', test: tests[2] },
+    { body: 'В чем разница между однорядными и многорядными функциями?', test: tests[2] },
+    { body: 'Какое свойство позволяет вам спрятать элемент, но сохранить занимаемое им пространство на странице?', test: tests[3] },
+    { body: 'Какой селектор позволяет вам обратиться к каждому элементу веб-страницы?', test: tests[3] }
     ])
 
   Answer.create!([
-    { body: 'Это объекты являющиеся экземплярами класса Class.', question_id: questions[0].id },
-    { body: 'Public, private, protected.', question_id: questions[1].id },
-    { body: 'Текст комментария нужно поместить внутри <!-- и -->.', question_id: questions[2].id },
-    { body: 'Это технология, которая позволяет привязывать ссылки к фрагментам изображения.', question_id: questions[3].id },
-    { body: 'Важен. Когда строится составной индекс, сначала индексируется первый столбец, а потом строятся индексы других столбцов, на основании главного (первого).', question_id: questions[4].id },
-    { body: 'Однорядные функции одновременно работают только с одной строкой, а многорядные функции – с данными из нескольких строк.', question_id: questions[5].id },
-    { body: 'Visibility или opacity.', question_id: questions[6].id },
-    { body: 'Универсальный селектор (*).', question_id: questions[7].id }
+    { body: 'Это объекты являющиеся экземплярами класса Class.', question: questions[0] },
+    { body: 'Public, private, protected.', question: questions[1] },
+    { body: 'Текст комментария нужно поместить внутри <!-- и -->.', question: questions[2] },
+    { body: 'Это технология, которая позволяет привязывать ссылки к фрагментам изображения.', question: questions[3] },
+    { body: 'Важен. Когда строится составной индекс, сначала индексируется первый столбец, а потом строятся индексы других столбцов, на основании главного (первого).', question: questions[4] },
+    { body: 'Однорядные функции одновременно работают только с одной строкой, а многорядные функции – с данными из нескольких строк.', question: questions[5] },
+    { body: 'Visibility или opacity.', question: questions[6] },
+    { body: 'Универсальный селектор (*).', question: questions[7] }
     ])
 
   PassedTest.create!([
-     { user_id: users[0].id, test_id: tests[0].id },
-     { user_id: users[0].id, test_id: tests[1].id },
-     { user_id: users[0].id, test_id: tests[2].id },
-     { user_id: users[0].id, test_id: tests[3].id },
-     { user_id: users[1].id, test_id: tests[2].id },
-     { user_id: users[1].id, test_id: tests[1].id },
-     { user_id: users[2].id, test_id: tests[3].id }
-      ])
+     { user: users[0], test: tests[0] },
+     { user: users[0], test: tests[1] },
+     { user: users[0], test: tests[2] },
+     { user: users[0], test: tests[3] },
+     { user: users[1], test: tests[2] },
+     { user: users[1], test: tests[1] },
+     { user: users[2], test: tests[3] }
+     ])
 end
