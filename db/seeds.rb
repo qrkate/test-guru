@@ -1,8 +1,8 @@
 unless Test.exists?
   users = User.create!([
-    { name: 'Kate', login: 'qrkate', password: 'kkk555' },
-    { name: 'Diana', login: 'di5', password: '12345' },
-    { name: 'Max', login: 'maxx', password: 'm1a2x3' }
+    { name: 'Kate', email: 'qrkate', password: 'kkk555' },
+    { name: 'Diana', email: 'di5', password: '12345' },
+    { name: 'Max', email: 'maxx', password: 'm1a2x3' }
     ])
 
   categories = Category.create!([
