@@ -1,8 +1,8 @@
 unless Test.exists?
   users = User.create!([
-    { name: 'Kate', login: 'qrkate', password: 'kkk555' },
-    { name: 'Diana', login: 'di5', password: '12345' },
-    { name: 'Max', login: 'maxx', password: 'm1a2x3' }
+    { name: 'Kate', email: 'qrkate', password: 'kkk555' },
+    { name: 'Diana', email: 'di5', password: '12345' },
+    { name: 'Max', email: 'maxx', password: 'm1a2x3' }
     ])
 
   categories = Category.create!([
@@ -29,12 +29,12 @@ unless Test.exists?
     ])
 
   Answer.create!([
-    { body: 'Это объекты являющиеся экземплярами класса Class.', question: questions[0] },
+    { body: 'Это объекты являющиеся экземплярами класса Class.', question: questions[0], correct: true },
     { body: 'Public, private, protected.', question: questions[1] },
-    { body: 'Текст комментария нужно поместить внутри <!-- и -->.', question: questions[2] },
+    { body: 'Текст комментария нужно поместить внутри <!-- и -->.', question: questions[2], correct: true },
     { body: 'Это технология, которая позволяет привязывать ссылки к фрагментам изображения.', question: questions[3] },
     { body: 'Важен. Когда строится составной индекс, сначала индексируется первый столбец, а потом строятся индексы других столбцов, на основании главного (первого).', question: questions[4] },
-    { body: 'Однорядные функции одновременно работают только с одной строкой, а многорядные функции – с данными из нескольких строк.', question: questions[5] },
+    { body: 'Однорядные функции одновременно работают только с одной строкой, а многорядные функции – с данными из нескольких строк.', question: questions[5], correct: true },
     { body: 'Visibility или opacity.', question: questions[6] },
     { body: 'Универсальный селектор (*).', question: questions[7] }
     ])
