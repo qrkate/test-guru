@@ -1,4 +1,4 @@
 <h1><%= question_header(@question) %></h1>
 
 <%= render 'form' %>
-<%= link_to 'Назад', test_path(@test) %>
+<%= link_to 'Назад', test_path(@question.test) %>
