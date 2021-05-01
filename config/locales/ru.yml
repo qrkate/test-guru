@@ -130,7 +130,7 @@ ru:
       second: Секунд
       year: Год
   errors:
-    format: "%{attribute} %{message}"
+    format: "Атрибут %{message}"
     messages:
       accepted: нужно подтвердить
       blank: не может быть пустым
@@ -179,9 +179,9 @@ ru:
     select:
       prompt: 'Выберите: '
     submit:
-      create: Создать %{model}
-      submit: Сохранить %{model}
-      update: Сохранить %{model}
+      create: Создать
+      submit: Сохранить
+      update: Сохранить
   number:
     currency:
       format:
