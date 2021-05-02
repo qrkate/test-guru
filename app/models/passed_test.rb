@@ -33,11 +33,12 @@ class PassedTest < ApplicationRecord
   private
 
   def before_validation_set_current_question
-    if new_record?
-      self.current_question = test.questions.first if test.present?
-    else
-      self.current_question = test.questions.order(:id).where('id > ?', current_question.id).first
-    end
+    self.current_question =
+      if new_record?
+        test.questions.first if test.present?
+      else
+        test.questions.order(:id).where('id > ?', current_question.id).first
+      end
   end
 
   def correct_answer?(answer_ids)
