@@ -1,0 +1,14 @@
+<h1>Тест <%= @passed_test.test.title %> завершен</h1>
+
+<p>Процент успеха:</p>
+
+<% if @passed_test.successful_result? %>
+<p><span class="successful_result"><%= @passed_test.result_precent.to_i %>%</span></p>
+<strong>Тест пройден успешно!</strong><br>
+
+<% else %>
+<p><span class="unsuccessful_result"><%= @passed_test.result_precent.to_i %>%</span></p>
+<strong>Тест провален!</strong><br>
+<% end %>
+
+<%= link_to 'Список всех тестов', tests_path %>
