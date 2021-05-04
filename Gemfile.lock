@@ -62,6 +62,7 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.7.3)
       msgpack (~> 1.0)
@@ -202,6 +203,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
@@ -221,7 +223,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 2.7.3p183
 
 BUNDLED WITH
-   2.1.2
+   2.1.4
