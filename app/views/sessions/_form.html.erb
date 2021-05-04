@@ -1,4 +1,5 @@
 <%= form_with url: sessions_path, local: true do |form| %>
+  <%= show_flash_type(:alert) %>
 
   <p>
     <%= form.label :email, 'Почта:' %><br>

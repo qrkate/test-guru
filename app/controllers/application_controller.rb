@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   private
   def authenticate_user!
     unless current_user
-      redirect_to login_path
+      redirect_to login_path, alert: "Необходимо зарегестрироваться!"
     end
   end
 
