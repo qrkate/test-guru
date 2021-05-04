@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: "Test", foreign_key: "author_id", dependent: :destroy
 
   validates :name, :email, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, uniqueness: true
 
   has_secure_password
 
