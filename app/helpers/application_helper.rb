@@ -8,6 +8,6 @@ module ApplicationHelper
   end
 
   def show_flash_type(type)
-    content_tag(:div, content_tag(:p, flash[type]), class: "flash alert") if flash[type]
+    content_tag(:div, content_tag(:p, flash[type]), class: "flash #{type}") if flash[type]
   end
 end
