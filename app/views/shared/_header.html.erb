@@ -1,0 +1,11 @@
+<% if logged_in? %>
+  <p class='nav user'>
+    Добро пожаловать, <b><%= current_user.name %></b>.
+  <%= link_to 'Выйти', logout_path, method: :delete %>
+  </p>
+<% else %>
+  <p class='nav user'>
+  <%= link_to 'Регестрация', signup_path %> |
+  <%= link_to 'Вход', login_path %>
+  </p>
+<% end %>
