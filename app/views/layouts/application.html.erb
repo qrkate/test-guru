@@ -12,6 +12,7 @@
 
   <body>
     <%= render 'shared/header' %>
+    <%= show_flash_type(:alert) %>
     <%= yield %>
     <%= render 'shared/footer' %>
   </body>
