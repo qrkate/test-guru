@@ -18,4 +18,8 @@ Rails.application.routes.draw do
       get :result
     end
   end
+
+  namespace :admin do
+    resources :tests
+  end
 end
