@@ -1,4 +1,7 @@
 ru:
+  sevices:
+    gist:
+      description: 'Вопрос %{title} от TestGuru'
   activerecord:
     errors:
       messages:
@@ -268,5 +271,5 @@ ru:
     pm: вечера
   passed_tests:
     gist:
-      success: "Gist успешно сохранен!"
+      success: "%{link_gist} успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"

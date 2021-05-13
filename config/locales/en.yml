@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+  sevices:
+    gist:
+      description: "A questions about %{title} from TestGuru"
+  test_passages:
+    gist:
+      success: "%{link_gist} was created successfully"
+      failure: "An error occurred while saving gist"
