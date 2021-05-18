@@ -38,3 +38,4 @@ en:
     create:
       success: "%{link_gist} was created successfully"
       failure: "An error occurred while saving gist"
+      gist_url: "Gist"

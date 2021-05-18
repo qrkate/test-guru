@@ -8,19 +8,19 @@ class Github::CreateGist
     @client = client
   end
 
-  def self.call(user, question)
+  def self.call(user:, question:)
     new(user, question).perform
   end
 
   def perform
     response = @client.create_gist(gist_params)
-    save_gist!(@question, response.html_url) if response.respond_to? :html_url
+    save_gist!(@question, response.html_url, response.id)
     ResultObject.new(response.html_url.present?, response.html_url)
   end
 
   private
   def octokit_client
-    Octokit::Client.new(:access_token => Rails.application.credentials.gist_api_key!)
+    Octokit::Client.new(access_token: Rails.application.credentials.gist_api_key!)
   end
 
   def gist_params
@@ -38,7 +38,7 @@ class Github::CreateGist
     [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 
-  def save_gist!(question, url)
-    Gist.create!(user: @user, question: @question, url: url)
+  def save_gist!(question, url, hash)
+    Gist.create!(user: @user, question: @question, url: url, url_hash: hash)
   end
 end
