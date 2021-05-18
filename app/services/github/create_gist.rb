@@ -1,4 +1,6 @@
-class GistQuestionService
+class Github::CreateGist
+  ResultObject = Struct.new(:success?, :html_url)
+
   def initialize(user, question, client: octokit_client)
     @user = user
     @question = question
@@ -6,10 +8,14 @@ class GistQuestionService
     @client = client
   end
 
-  def call
-    result = @client.create_gist(gist_params)
-    save_gist(@question, result.html_url) if result.respond_to? :html_url
-    result
+  def self.call(user, question)
+    new(user, question).perform
+  end
+
+  def perform
+    response = @client.create_gist(gist_params)
+    save_gist!(@question, response.html_url) if response.respond_to? :html_url
+    ResultObject.new(response.html_url.present?, response.html_url)
   end
 
   private
@@ -29,12 +35,10 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join("\n")
+    [@question.body, *@question.answers.pluck(:body)].join("\n")
   end
 
-  def save_gist(question, url)
+  def save_gist!(question, url)
     Gist.create!(user: @user, question: @question, url: url)
   end
 end

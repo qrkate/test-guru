@@ -1,8 +1,8 @@
 class GistsController < ApplicationController
   def create
     @passed_test = PassedTest.find(params[:id])
-    result = GistQuestionService.new(current_user, @passed_test.current_question).call
-    if result.respond_to? :html_url
+    result = Github::CreateGist.call(current_user, @passed_test.current_question)
+    if result.success?
       flash[:notice] = t('.success', link_gist: link_gist(result))
     else
       flash[:alert] = t('.failure')
