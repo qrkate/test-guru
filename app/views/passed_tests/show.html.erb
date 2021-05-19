@@ -4,9 +4,9 @@
   Вопрос <%= @passed_test.current_question_number %> из <%= @passed_test.test.questions.count %>
 </p>
 
-<b>
-  <%= @passed_test.current_question.body %>
-</b>
+<p>
+  <b><%= @passed_test.current_question.body %></b>
+</p>
 
 <%= form_with url: passed_test_path(@passed_test), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @passed_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
@@ -16,5 +16,6 @@
   </p>
   <% end %>
 
+  <p><%= link_to 'Gist', gists_path(:id => @passed_test.id), method: :post %></p>
   <p><%= form.submit 'Следующий вопрос' %></p>
 <% end %>

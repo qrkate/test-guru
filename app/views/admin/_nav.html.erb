@@ -1,7 +1,9 @@
 <div class="nav nav-admin">
   <span class="nav-admin title"> TestGuru </span>
   <div class="nav-admin user">
+    <%= link_to 'Gist', admin_gists_path %> |
     Добро пожаловать, <b class="nav-admin user-email"><%= current_user.first_name %></b> Guru |
     <%= link_to 'Выход', destroy_user_session_path, method: :delete%>
+
   </div>
 </div>
