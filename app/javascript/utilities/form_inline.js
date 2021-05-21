@@ -18,6 +18,8 @@ document.addEventListener('turbolinks:load', function() {
 
  function formInlineHandler(testId) {
    const link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]')
+   if (link == null) return
+
    const $testTitle = $('.test-title[data-test-id="' + testId + '"]')
    const $formInline = $('.form-inline[data-test-id="' + testId + '"]')
 
