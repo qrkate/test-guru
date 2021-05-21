@@ -1,8 +1,12 @@
 <h1>Список тестов</h1>
 
-<table>
+<table class='table'>
   <tr>
-    <th>Тест</th>
+    <th class='sort-by-title pointer'>
+      Тест
+      <%= octicon 'arrow-up', class: 'text-success hide'%>
+      <%= octicon 'arrow-down', class: 'text-success hide'%>
+    </th>
     <th>Уровень</th>
     <th>Кол-во вопросов</th>
     <th>Actions</th>
