@@ -39,3 +39,9 @@ en:
       success: "%{link_gist} was created successfully"
       failure: "An error occurred while saving gist"
       gist_url: "Gist"
+  admin:
+    tests:
+      test:
+        rename: "Rename"
+      form_inline:
+        submit: "OK"
