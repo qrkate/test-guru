@@ -3,7 +3,7 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 require("utilities/sorting")
-require("utilities/password_check")
+require("tool_use/password_check")
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
