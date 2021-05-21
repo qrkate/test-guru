@@ -1,4 +1,4 @@
-class PasswordConfirmation {
+export class PasswordConfirmation {
   constructor(form) {
     this.form             = form
     this.password         = form.elements.user_password
@@ -31,9 +31,3 @@ class PasswordConfirmation {
     })
   }
 }
-
-document.addEventListener('turbolinks:load', function () {
-  const reg_form = document.getElementById('user-registration')
-
-  if(reg_form) new PasswordConfirmation(reg_form)
-})
