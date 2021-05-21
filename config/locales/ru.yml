@@ -274,3 +274,9 @@ ru:
       success: "%{link_gist} успешно сохранен!"
       failure: "Во время сохранения gist произошла ошибка"
       gist_url: "Gist"
+  admin:
+    tests:
+      test:
+        rename: 'Переименовать'
+      form_inline:
+        submit: "OK"
