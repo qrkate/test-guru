@@ -5,6 +5,7 @@
 require("utilities/sorting")
 require("tool_use/password_check")
 require("utilities/form_inline")
+require('jquery')
 
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
