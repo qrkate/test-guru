@@ -16,6 +16,12 @@
   </p>
   <% end %>
 
+  <div class="progress">
+  <%= tag.div class: "progress-bar",
+              data: { current: @passed_test.current_question_number,
+                      count: @passed_test.test.questions.count } %>
+  </div>
+
   <p><%= link_to 'Gist', gists_path(:id => @passed_test.id), method: :post %></p>
-  <p><%= form.submit 'Следующий вопрос' %></p>
+  <p><%= form.submit 'Следующий вопрос'%></p>
 <% end %>
