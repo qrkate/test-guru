@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2021_05_23_072448) do
     t.integer "correct_questions", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "success", default: false
     t.index ["current_question_id"], name: "index_passed_tests_on_current_question_id"
     t.index ["test_id"], name: "index_passed_tests_on_test_id"
     t.index ["user_id"], name: "index_passed_tests_on_user_id"
