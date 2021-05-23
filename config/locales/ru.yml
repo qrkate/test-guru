@@ -1,4 +1,9 @@
 ru:
+  first_try?: 'Тест пройден с первой попытки'
+  all_category?: 'Пройдены все тесты категории'
+  all_level?: 'Пройдены все тесты уровня'
+  push_badge: 'Поздравляем! Вы заработали бейдж :)'
+  badges_null: 'У вас пока нет бейджей :('
   sevices:
     gist:
       description: 'Вопрос %{title} от TestGuru'

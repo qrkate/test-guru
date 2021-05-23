@@ -9,7 +9,8 @@ class PassedTestsController < ApplicationController
   def update
     @passed_test.accept!(params[:answer_ids])
     if @passed_test.completed?
-      TestsMailer.completed_test(@passed_test).deliver_now
+      @passed_test.update!(success: true) if @passed_test.successful_result?
+      reward
       redirect_to result_passed_test_path(@passed_test)
     else
       render :show
@@ -19,5 +20,13 @@ class PassedTestsController < ApplicationController
   private
   def find_passed_test
     @passed_test = PassedTest.find(params[:id])
+  end
+
+  def reward
+    badges = BadgeService.new(@passed_test).call
+    unless badges.empty?
+      current_user.badges.push(badges)
+      flash[:notice] = t('push_badge')
+    end
   end
 end
