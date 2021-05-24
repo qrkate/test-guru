@@ -1,0 +1,33 @@
+<% if @user_badges.present? %>
+  <h1>Все ваши бейджи</h1>
+
+  <table class='table'>
+    <tr>
+      <th class='sort-by-title pointer'>
+        Название
+        <%= octicon 'arrow-up', class: 'text-success hide'%>
+        <%= octicon 'arrow-down', class: 'text-success hide'%>
+      </th>
+      <th>Бейдж</th>
+    </tr>
+    <%= render partial: 'user_badges', collection: @user_badges, as: :user_badge %>
+  </table>
+<% else %>
+  <p><% flash[:notice] = t('badges_null')%></p>
+<% end %>
+
+<h1>Все бейджи</h1>
+
+<table class='table'>
+  <tr>
+    <th class='sort-by-title pointer'>
+      Название
+      <%= octicon 'arrow-up', class: 'text-success hide'%>
+      <%= octicon 'arrow-down', class: 'text-success hide'%>
+    </th>
+    <th>Бейдж</th>
+  </tr>
+  <%= render @badges %>
+</table>
+
+<%= link_to 'Назад', tests_path %>

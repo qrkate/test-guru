@@ -1,0 +1,11 @@
+<tr>
+  <td><%= badge.name %></td>
+  <td><%= image_tag("#{badge.image_url}", size: "82x118") %></td>
+  <td><%= t(badge.rule) %> <%= badge.option %></td>
+  <td><%= link_to 'Изменить', edit_admin_badge_path(badge)  %></td>
+  <td><%= link_to 'Удалить',
+                  admin_badge_path(badge),
+                  method: :delete,
+                  data: { confirm: 'Вы уверены?'}%>
+  </td>
+</tr>

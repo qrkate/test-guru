@@ -1,0 +1,23 @@
+<h1>Список бейджей</h1>
+
+<p>
+  <%= link_to 'Создать бейдж', new_admin_badge_path %>
+</p>
+
+<%= render 'shared/errors', resourse: @badge %>
+
+<table class='table'>
+  <tr>
+    <th class='sort-by-title pointer'>
+      Название
+      <%= octicon 'arrow-up', class: 'text-success hide'%>
+      <%= octicon 'arrow-down', class: 'text-success hide'%>
+    </th>
+    <th>Бейдж</th>
+    <th>Правило</th>
+    <th colspan = '2'>Actions</th>
+  </tr>
+  <%= render @badges %>
+</table>
+
+<%= link_to 'Назад', admin_tests_path %>

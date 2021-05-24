@@ -1,0 +1,29 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resourse: @badge %>
+
+  <p>
+    <%= form.label :name, 'Название:' %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :image_url, 'Ссылка на изображение:' %><br>
+    <%= form.text_field :image_url %>
+  </p>
+
+  <p>
+    <%= form.label :rule, 'Правило получения:' %><br>
+    <%= form.select :rule, Badge::TYPE_BADGES.map { |type| [ t(type), type ] }, prompt: true %>
+  </p>
+
+  <p>
+    <%= form.label :option, 'Критерии:' %><br>
+    <%= form.text_field :option %>
+  </p>
+
+  <p>
+    <%= image_tag("#{@badge.image_url}", size: "82x118") if @badge.image_url.present? %>
+  </p>
+
+  <p><%= form.submit %></p>
+<% end %>
