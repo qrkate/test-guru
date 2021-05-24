@@ -8,7 +8,7 @@
   <b><%= @passed_test.current_question.body %></b>
 </p>
 
-<%= form_with url: passed_test_path(@passed_test), local: true, method: :put do |form| %>
+<%= form_with url: passed_test_path(@passed_test), local: true, method: :put, id: "passed_test" do |form| %>
   <%= form.collection_check_boxes :answer_ids, @passed_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
   <p>
     <%= b.check_box id: "answer_ids_#{b.object.id}" %>
@@ -26,6 +26,6 @@
   <p><%= form.submit 'Следующий вопрос', id: "next"%></p>
 
   <% unless @passed_test.test.timer.nil? %>
-    <%= tag.div current_timer(@passed_test.left_time), id: "js-timer", class: "timer" %>
+    <%= tag.div current_timer(@passed_test.left_time), data: { second: @passed_test.left_time }, id: "js-timer", class: "timer" %>
   <% end %>
 <% end %>

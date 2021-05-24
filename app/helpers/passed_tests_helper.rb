@@ -3,8 +3,8 @@ module PassedTestsHelper
     return if time.nil?
 
     timer = time.round
-    timerMin = timer / 60
-    timerSec = timer % 60
-    "#{timerMin}:#{timerSec}"
+    min = timer / 60
+    sec = timer % 60
+    "#{min}:#{sec}"
   end
 end
