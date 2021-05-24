@@ -1,5 +1,10 @@
 <h1>Тест <%= @passed_test.test.title %> завершен</h1>
 
+<% unless @passed_test.left_time.nil?%>
+  <% flash.now[:alert] = t('time_is_over') if @passed_test.left_time == 0 %>
+  <% flash.now[:notice] = t('good_time') if @passed_test.left_time > 0 %>
+<% end %>
+
 <p>Процент успеха:</p>
 
 <% if @passed_test.successful_result? %>

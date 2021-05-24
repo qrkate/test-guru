@@ -2,7 +2,11 @@ class PassedTestsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_passed_test, only: %i[show result update]
 
-  def show; end
+  def show
+    if @passed_test.time_is_over?
+      redirect_to result_passed_test_path(@passed_test)
+    end
+  end
 
   def result; end
 
@@ -13,7 +17,7 @@ class PassedTestsController < ApplicationController
       reward
       redirect_to result_passed_test_path(@passed_test)
     else
-      render :show
+      redirect_to @passed_test
     end
   end
 

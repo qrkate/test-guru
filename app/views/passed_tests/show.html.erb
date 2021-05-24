@@ -23,5 +23,9 @@
   </div>
 
   <p><%= link_to 'Gist', gists_path(:id => @passed_test.id), method: :post %></p>
-  <p><%= form.submit 'Следующий вопрос'%></p>
+  <p><%= form.submit 'Следующий вопрос', id: "next"%></p>
+
+  <% unless @passed_test.test.timer.nil? %>
+    <%= tag.div current_timer(@passed_test.left_time), id: "js-timer", class: "timer" %>
+  <% end %>
 <% end %>
