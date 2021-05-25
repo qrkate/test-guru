@@ -31,6 +31,8 @@
 
 en:
   hello: "Hello world"
+  good_time: "Perfect time!"
+  time_is_over: "Time is over!"
   first_try?: "Passed the test on the first try"
   all_category?: "Passed all tests by category"
   all_level?: "Passed all tests for level"

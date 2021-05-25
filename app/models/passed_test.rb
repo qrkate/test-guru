@@ -30,7 +30,21 @@ class PassedTest < ApplicationRecord
     result_precent >= SUCCESSFUL_RESULT
   end
 
+  def left_time
+    return if test.timer.nil?
+    time = set_timer - Time.current
+    return 0 if time <= 0
+    time
+  end
+
+  def time_is_over?
+    left_time == 0
+  end
+
   private
+  def set_timer
+    created_at + test.timer.minute
+  end
 
   def before_validation_set_current_question
     return unless test.present?

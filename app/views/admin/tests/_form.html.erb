@@ -16,5 +16,10 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
+  <p>
+  <%= form.label :timer, 'Ограничение по времени (в минутах)' %><br>
+  <%= form.select :timer, (1..100), prompt: true %>
+  </p>
+
   <p><%= form.submit %></p>
 <% end %>
